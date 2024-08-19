@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar";
 import Post from "../components/Post";
 
 //Enter your own API key below
-const apiKey = "";
+const API_KEY = "";
 
 const NewsFeed = ({ navigation }) => {
   const [articles, setArticles] = useState([]);
@@ -13,7 +13,7 @@ const NewsFeed = ({ navigation }) => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://api.mediastack.com/v1/news?countries=in&sort=popularity&access_key=${apiKey}`
+        `https://api.mediastack.com/v1/news?countries=in&sort=popularity&access_key=${API_KEY}`
       );
       const data = await response.json();
       if (data.data) {
