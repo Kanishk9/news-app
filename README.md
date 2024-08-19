@@ -2,6 +2,12 @@
 ## Overview
 This is a React Native News App that allows users to browse the latest news articles from various categories. The app also includes a search functionality, enabling users to find news articles based on quickly
 specific keywords or topics.
+## Features
+1) Latest News: Browse the most recent news articles from multiple sources.
+2) Category Filtering: Filter news articles by categories such as Technology, Sports, Business, Entertainment, etc.
+3) Search Functionality: Search for news articles by entering keywords. The search results update in real-time as the user types.
+4) Detailed Article View: Tap on a news item to read the full article.
+5) Responsive UI: Optimized for both iOS and Android devices, ensuring a smooth user experience across different screen sizes.
 ## Usage
 1) Browsing News: Open the app to see the latest news articles.
 2) Using Search: Use the search bar at the top of the screen to search for specific news articles. The list will be filtered in real-time based on your input.
