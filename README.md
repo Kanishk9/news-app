@@ -9,9 +9,9 @@ specific keywords or topics.
 4) Detailed Article View: Tap on a news item to read the full article.
 5) Responsive UI: Optimized for both iOS and Android devices, ensuring a smooth user experience across different screen sizes.
 ## Screenshots
-1) News Feed
+1) News Feed\
 ![Screenshot (59)](https://github.com/user-attachments/assets/d81378e9-2256-4681-beb4-8d6cf4126fb1)
-2) Detailed Article View
+2) Detailed Article View\
 ![Screenshot (60)](https://github.com/user-attachments/assets/419b85f7-e990-4bdc-9f44-09f9ed239c83)
 ## Usage
 1) Browsing News: Open the app to see the latest news articles.
