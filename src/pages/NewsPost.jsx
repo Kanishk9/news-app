@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { decode } from "html-entities";
@@ -8,34 +8,40 @@ const NewsPost = ({ route }) => {
   const news = route.params;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.headingContainer}>
-        <Text style={styles.headingText}>{decode(news.title)}</Text>
+    <ScrollView style={styles.scrollviewContainer}>
+      <View style={styles.container}>
+        <View style={styles.headingContainer}>
+          <Text style={styles.headingText}>{decode(news.title)}</Text>
+        </View>
+        <View style={styles.authorContainer}>
+          <Text style={styles.authorText}>-{news.author || "Unknown"}</Text>
+        </View>
+        <View style={styles.dateContainer}>
+          <Text style={styles.dateText}>
+            {extractDateTime(news.published_at)}
+          </Text>
+        </View>
+        <View style={styles.descriptionContainer}>
+          <Text style={styles.descriptionText}>{decode(news.description)}</Text>
+        </View>
+        <View style={styles.sourceContainer}>
+          <Text>Source:-</Text>
+          <Text>{news.source}</Text>
+        </View>
       </View>
-      <View style={styles.authorContainer}>
-        <Text style={styles.authorText}>-{news.author || "Unknown"}</Text>
-      </View>
-      <View style={styles.dateContainer}>
-        <Text style={styles.dateText}>{extractDateTime(news.published_at)}</Text>
-      </View>
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText}>{decode(news.description)}</Text>
-      </View>
-      <View style={styles.sourceContainer}>
-        <Text>Source:-</Text>
-        <Text>{news.source}</Text>
-      </View>
-    </View>
+    </ScrollView>
   );
 };
 
 export default NewsPost;
 
 const styles = StyleSheet.create({
+  scrollviewContainer: {
+    backgroundColor: "#70C391",
+  },
   container: {
     flex: 1,
     justifyContent: "flex-start",
-    backgroundColor: "#70C391",
     padding: 30,
   },
   headingContainer: {
@@ -64,7 +70,7 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 18,
-    fontWeight: "400"
+    fontWeight: "400",
   },
   sourceContainer: {
     padding: 10,

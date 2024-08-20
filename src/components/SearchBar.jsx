@@ -1,20 +1,44 @@
-import { StyleSheet, TextInput, View } from "react-native";
-import React, { useState } from "react";
+import {
+  StyleSheet,
+  TextInput,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
+import React, { useEffect, useState, useRef } from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const SearchBar = (props) => {
   const [searchText, setSearchText] = useState("");
 
+  const searchInputRef = useRef(null);
+
+  const handleOutsideClick = () => {
+    if (searchInputRef.current) {
+      searchInputRef.current.blur(); // Blur the input field
+    }
+  };
+
+  useEffect(() => {
+    const searchedArticles = props.data.filter((article) => {
+      if (article.title.toLowerCase().includes(searchText.toLowerCase()))
+        return article;
+    });
+    props.setFinalState(searchedArticles);
+  }, [searchText]);
+
   return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder={props.placeholder || "Search"}
-        value={searchText}
-        onChangeText={setSearchText}
-      />
-      <Icon name="search" size={20} color="#888" style={styles.icon} />
-    </View>
+    <TouchableWithoutFeedback onPress={handleOutsideClick}>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          placeholder={props.placeholder || "Search"}
+          value={searchText}
+          ref={searchInputRef}
+          onChangeText={setSearchText}
+        />
+        <Icon name="search" size={20} color="#888" style={styles.icon} />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

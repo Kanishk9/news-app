@@ -6,17 +6,18 @@ import Post from "../components/Post";
 
 //Enter your own API key below
 const API_KEY = "";
+const BASE_URL = `https://api.mediastack.com/v1/news?countries=in&sort=popularity&access_key=${API_KEY}`;
 
 const NewsFeed = ({ navigation }) => {
+  const [fetchedData, setFetchedData] = useState([]);
   const [articles, setArticles] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        `https://api.mediastack.com/v1/news?countries=in&sort=popularity&access_key=${API_KEY}`
-      );
+      const response = await fetch(BASE_URL);
       const data = await response.json();
       if (data.data) {
+        setFetchedData(data.data);
         setArticles(data.data);
       }
     } catch (err) {
@@ -30,7 +31,7 @@ const NewsFeed = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <SearchBar placeholder="Search News" />
+      <SearchBar placeholder="Search News" data={fetchedData} setFinalState={setArticles} />
       <View style={styles.postContainer}>
         <FlatList
           data={articles}
