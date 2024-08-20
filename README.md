@@ -10,9 +10,9 @@ specific keywords or topics.
 5) Responsive UI: Optimized for both iOS and Android devices, ensuring a smooth user experience across different screen sizes.
 ## Screenshots
 1) News Feed
-   ![Screenshot (59)](https://github.com/user-attachments/assets/d81378e9-2256-4681-beb4-8d6cf4126fb1)
+![Screenshot (59)](https://github.com/user-attachments/assets/d81378e9-2256-4681-beb4-8d6cf4126fb1)
 2) Detailed Article View
-   ![Screenshot (60)](https://github.com/user-attachments/assets/419b85f7-e990-4bdc-9f44-09f9ed239c83)
+![Screenshot (60)](https://github.com/user-attachments/assets/419b85f7-e990-4bdc-9f44-09f9ed239c83)
 ## Usage
 1) Browsing News: Open the app to see the latest news articles.
 2) Using Search: Use the search bar at the top of the screen to search for specific news articles. The list will be filtered in real-time based on your input.
